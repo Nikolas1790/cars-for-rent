@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { CardConteiner, CardImg, CardMainInfo } from "./CatalogList.styled";
+import { AddressInfo, BriefMainInfo, ButtonLearnMore, CarModel, CardConteiner, CardImg, CardMainInfo, CardsBlock } from "./CatalogList.styled";
+// import ButtonLearnMore from "components/ButtonLearnMore/ButtonLearnMore";
 
 export default function CatalogList() {
   const [carList, setCarList] = useState([]);
@@ -21,29 +22,29 @@ export default function CatalogList() {
     fetchData();
   }, []); 
 
-  return (
-    <CardConteiner>
+  return (   
       <ul>
+         <CardsBlock>
         {carList.map((car) => (
-          <li key={car.id}>
+          <CardConteiner key={car.id}>
             <div>
                 <CardImg src={car.img}
-                    alt={car.make}
-                    width="274"
-                    height="268"
+                    alt={car.make}   
                 />
                   <CardMainInfo>
-                      <p >{car.make} <span>{car.model}</span>, {car.year}</p>
+                      <p >{car.make} <CarModel>{car.model}</CarModel>, {car.year}</p>
                       <p>{car.rentalPrice}</p>
                   </CardMainInfo>
-                  <div>
-                    <p>{car.address}| {car.rentalCompany}</p>
-                    <p> { car.type} |{car.make} |{car.id}</p>
-                  </div>
+                  <BriefMainInfo>
+                    <AddressInfo>{car.address}| {car.rentalCompany}</AddressInfo>
+                    <p> { car.type} |{car.make} |{car.id} | {car.accessories[0]}</p>
+                  </BriefMainInfo>
             </div>
-          </li>
+            {/* <ButtonLearnMore /> */}
+            <ButtonLearnMore type="button">Learn more</ButtonLearnMore>
+          </ CardConteiner>
         ))}
-      </ul>
-    </CardConteiner>
+        </CardsBlock>
+      </ul>    
   );
 }

@@ -4,7 +4,6 @@ import color from './GlobalColers';
 
 export const GlobalStyle = createGlobalStyle`
 
-
 *,
 *::before,
 *::after {
@@ -14,17 +13,17 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", 
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", 
 			"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
 			"Helvetica Neue", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: ${color.blackPrimary};
+  color: ${color.secondaryGray};
   width: 100%;
   height: 100vh;
-  margin: 0;
-  
+  margin: 0;  
 }
+
 h1,
 h2,
 h3,
