@@ -1,8 +1,8 @@
 import color from 'common/GlobalColers';
 import styled from 'styled-components'
 
-export const CardsBlock = styled.div`
-width: 1184px;
+export const CardsBlock = styled.ul`
+max-width: 1184px;
 display:flex;
 flex-direction: row;
 flex-wrap: wrap;

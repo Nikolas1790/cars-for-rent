@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { CarsBrendBlock, CarsFilterBlock, CarsFilterLabelBlock, CarsMileageBlock, CarsMileageBlockFromTo, CarsPriceBlock, CarsSarchBtn, InputStyledMileageFrom, InputStyledMileageTo, SelectStyled, SelectStyledBrendBlock, SelectStyledPriceBlock } from "./CarFilter.styled";
+import { CarsBrendBlock, CarsFilterBlock, CarsFilterLabelBlock, CarsMileageBlock, CarsMileageBlockFromTo, CarsPriceBlock, CarsSarchBtn, InputStyledMileageFrom, InputStyledMileageTo, SelectStyledBrendBlock, SelectStyledPriceBlock } from "./CarFilter.styled";
 
 const carBrands = [
     "Buick", "Volvo", "HUMMER", "Subaru", "Mitsubishi", "Nissan", "Lincoln",

@@ -5,8 +5,9 @@ import { Outlet } from 'react-router-dom';
 // // import { Footer } from './Footer/Footer';
 // // import { Container } from './App.styled';
 
-import { StyledLink } from './Layout.styled';
+// import { StyledLink } from './Layout.styled';
 import { Suspense } from 'react';
+import Header from 'components/Header/Header';
 
 // export const Layout = () => {
 //   return (
@@ -21,21 +22,15 @@ import { Suspense } from 'react';
 //     // </Container>
 //   );
 // };
-export const Layout = () => {
+export default function Layout() {
   return (
-    <>
-    <header>
-     <nav>
-       <StyledLink to="/">Home page</StyledLink>
-       <StyledLink to="/catalog">Car park</StyledLink>
-       <StyledLink to="/favorites">Favorites</StyledLink>      
-     </nav>
-    </header>
-    <main>
-      <Suspense fallback={null}>
-        <Outlet />  
-      </Suspense>
-    </main>  
-    </>
+    <div>
+      <Header />
+      <main>
+        <Suspense fallback={null}>
+          <Outlet />  
+        </Suspense>
+      </main>  
+    </div>
   );
 };

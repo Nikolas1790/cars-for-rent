@@ -1,6 +1,22 @@
 import color from 'common/GlobalColers';
 import styled from 'styled-components'
 
+export const MainConteinerCarsFilterBlock = styled.div`
+display: flex;
+
+align-items: center;
+flex-direction:column;
+/* max-width: 1184px; */
+/* gap: 18px;
+
+width: 859px;
+height: 74px;
+font-weight: 500;
+line-height: 1.28;
+
+margin-bottom: 50px; */
+`;
+
 export const CarsFilterBlock = styled.div`
 display: flex;
 align-items: flex-end;
@@ -26,6 +42,7 @@ margin-bottom: 8px;
 `;
 
 export const SelectStyledBrendBlock = styled.select`
+height: 48px;
   display: flex;
   padding: 14px 89px 14px 18px;
 
@@ -33,6 +50,7 @@ export const SelectStyledBrendBlock = styled.select`
   background: ${color.lightGray};
   border: none;
   width: 100%; 
+
 `;
 
 export const CarsPriceBlock = styled.div`
@@ -42,6 +60,7 @@ height: 74px;
 `;
 
 export const SelectStyledPriceBlock = styled.select`
+  height: 48px;
   display: flex;
   padding: 14px  18px;
 

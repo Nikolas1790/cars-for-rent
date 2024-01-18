@@ -23,10 +23,9 @@ export default function CatalogList() {
   }, []); 
 
   return (   
-      <ul>
-         <CardsBlock>
-        {carList.map((car) => (
-          <CardConteiner key={car.id}>
+      <CardsBlock>        
+           {carList.map((car) => (
+           <CardConteiner key={car.id}>
             <div>
                 <CardImg src={car.img}
                     alt={car.make}   
@@ -40,11 +39,10 @@ export default function CatalogList() {
                     <p> { car.type} |{car.make} |{car.id} | {car.accessories[0]}</p>
                   </BriefMainInfo>
             </div>
-            {/* <ButtonLearnMore /> */}
             <ButtonLearnMore type="button">Learn more</ButtonLearnMore>
+            
           </ CardConteiner>
-        ))}
-        </CardsBlock>
-      </ul>    
+        ))}            
+      </CardsBlock>    
   );
 }
