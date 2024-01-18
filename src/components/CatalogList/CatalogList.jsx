@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect} from "react";
+
 import { AddressInfo, BriefMainInfo, ButtonLearnMore, CarModel, CardConteiner, CardImg, CardMainInfo, CardsBlock } from "./CatalogList.styled";
-// import ButtonLearnMore from "components/ButtonLearnMore/ButtonLearnMore";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCars } from "redax/cars/operation";
 
 export default function CatalogList() {
-  const [carList, setCarList] = useState([]);
-
+  const dispatch = useDispatch();
+  const carList = useSelector((state) => state.cars.cars);
+  
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-           const response = await axios.get("https://65a8255794c2c5762da85eab.mockapi.io/api/car-list");
-
-        const data = response.data;
-
-        setCarList(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []); 
+    dispatch(fetchCars());
+  }, [dispatch]);
 
   return (   
       <CardsBlock>        

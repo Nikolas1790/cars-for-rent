@@ -1,98 +1,25 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://db-water-tracker.onrender.com/api/";
+axios.defaults.baseURL = "https://65a8255794c2c5762da85eab.mockapi.io/api/";
 
-export const getUserId = (owner) => {
-  return { owner };
-};
-
-const setJwtHeader = (token) => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
-
-
-export let currentDay = null
-
-export const addWaterVolume = createAsyncThunk(
-  "water/addWaterVolume",
-  async (data, thunkAPI) => {
+export const fetchCars = createAsyncThunk("cars/fetchCars", async () => {
     try {
-      const response = await axios.post(`/water`, data);
-      thunkAPI.dispatch(fetchWaterDataToday());
-      thunkAPI.dispatch(waterMonts(currentDay));
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-
-export const updateWaterVolume = createAsyncThunk(
-  "water/updateWaterVolume",
-  async ({ waterId, data }, thunkAPI) => {
-    try {
-      const response = await axios.patch(`/water/${waterId}/water-volume`, data);
-      thunkAPI.dispatch(fetchWaterDataToday());
-      thunkAPI.dispatch(waterMonts(currentDay));
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-
-export const deleteWaterVolume = createAsyncThunk(
-  "water/deleteWaterVolume",
-  async (waterId, thunkAPI) => {
-    try {
-      await axios.delete(`/water/${waterId}`);
-      const response = await axios.get("/today");
-
-      thunkAPI.dispatch(waterMonts(currentDay))
-
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-
-export const fetchWaterDataToday = createAsyncThunk(
-  "water/fetchWaterDataToday",
-  async (_, thunkAPI) => {
-    try {
-      const userId = getUserId();
-      const response = await axios.get(`/today`, {
-        params: {
-          userId,
-        },
-      });
+      const response = await axios.get(`/car-list`);
+    //   console.log("hhhhhhhhhhhhhhhhhhh",response.data)
       
       return response.data;
+
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      throw error;
     }
-  }
-);
-
-export const waterMonts = createAsyncThunk(
-  "auth/monts",
-
-  async (date, thunkAPI) => {
-    currentDay = date;
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
-
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue("Unable to fetch user");
-    }
+  });
+  
+  export const fetchCarById = createAsyncThunk("cars/fetchCarById", async (id) => {
     try {
-      setJwtHeader(persistedToken);
-      const res = await axios.get(`/month/${date}`);
-      return res.data.result;
+      const response = await axios.get(`/car-list/${id}`);
+      return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      throw error;
     }
-  }
-);
+  });
