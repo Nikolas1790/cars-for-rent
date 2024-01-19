@@ -6,7 +6,6 @@ axios.defaults.baseURL = "https://65a8255794c2c5762da85eab.mockapi.io/api/";
 export const fetchCars = createAsyncThunk("cars/fetchCars", async () => {
     try {
       const response = await axios.get(`/car-list`);
-    //   console.log("hhhhhhhhhhhhhhhhhhh",response.data)
       
       return response.data;
 
@@ -23,3 +22,14 @@ export const fetchCars = createAsyncThunk("cars/fetchCars", async () => {
       throw error;
     }
   });
+
+//   export const filterCars = createAsyncThunk("cars/filterCars", async () => {
+//     try {
+//       const response = await axios.post(`/car-list`);
+      
+//       return response.data;
+
+//     } catch (error) {
+//       throw error;
+//     }
+//   });

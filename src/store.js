@@ -9,10 +9,19 @@ import {
     REGISTER,
     REHYDRATE,
   } from "redux-persist";
+import persistReducer from "redux-persist/es/persistReducer";
+import storage from "redux-persist/lib/storage";
+
+  const persistConfig = {
+    key: "root",
+    storage,
+  };
+  
+  const persistedReducer = persistReducer(persistConfig, carReducer);
 
 export const store = configureStore({
   reducer: {
-    cars: carReducer,
+    cars: persistedReducer,
   },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

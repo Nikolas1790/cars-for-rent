@@ -1,4 +1,4 @@
-import { fetchCarById, fetchCars } from "./operation";
+import { fetchCarById, fetchCars, filterCars } from "./operation";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -38,7 +38,20 @@ const carSlice = createSlice({
         .addCase(fetchCarById.rejected, (state, action) => {
           state.loading = false;
           state.error = action.error.message;
-        });
+        })
+
+        // .addCase(filterCars.pending, (state) => {
+        //   state.loading = true;
+        //   state.error = null;
+        // })
+        // .addCase(filterCars.fulfilled, (state, action) => {
+        //   state.loading = false;
+        //   state.selectedCar = action.payload;
+        // })
+        // .addCase(filterCars.rejected, (state, action) => {
+        //   state.loading = false;
+        //   state.error = action.error.message;
+        // });
     },
   });
   

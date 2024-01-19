@@ -14,7 +14,7 @@ export default function CatalogList() {
 
   return (   
       <CardsBlock>        
-           {carList.map((car) => (
+           {Array.isArray(carList) && carList.map((car) => (
            <CardConteiner key={car.id}>
             <div>
                 <CardImg src={car.img}
