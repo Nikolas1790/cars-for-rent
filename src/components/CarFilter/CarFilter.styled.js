@@ -1,21 +1,7 @@
 import color from 'common/GlobalColers';
 import styled from 'styled-components'
 
-export const MainConteinerCarsFilterBlock = styled.div`
-display: flex;
 
-align-items: center;
-flex-direction:column;
-/* max-width: 1184px; */
-/* gap: 18px;
-
-width: 859px;
-height: 74px;
-font-weight: 500;
-line-height: 1.28;
-
-margin-bottom: 50px; */
-`;
 
 export const CarsFilterBlock = styled.div`
 display: flex;

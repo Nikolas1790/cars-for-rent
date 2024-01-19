@@ -1,8 +1,7 @@
 
 import { useState } from "react";
 import { CarsBrendBlock, CarsFilterBlock, CarsFilterLabelBlock, CarsMileageBlock, CarsMileageBlockFromTo, CarsPriceBlock, CarsSarchBtn, InputStyledMileageFrom, InputStyledMileageTo, SelectStyledBrendBlock, SelectStyledPriceBlock } from "./CarFilter.styled";
-import { useDispatch, useSelector } from "react-redux";
-// import { filterCars } from "redax/cars/operation";
+import {  useSelector } from "react-redux";
 
 const carBrands = [
     "Buick", "Volvo", "HUMMER", "Subaru", "Mitsubishi", "Nissan", "Lincoln",
@@ -12,8 +11,8 @@ const carBrands = [
 
   const rentalPrices = Array.from({ length: 50 }, (_, index) => (index+1) * 10);
 
-export default function CarFilter() {
-  const dispatch = useDispatch();
+export default function CarFilter({updateFilteredCars}) {
+  // const dispatch = useDispatch();
   const carList = useSelector((state) => state.cars.cars);
 
     const [selectedBrand, setSelectedBrand] = useState('');
@@ -39,10 +38,11 @@ export default function CarFilter() {
 
       const handleSearch = () => {
         const findCars = carList.filter(item => item.make === selectedBrand)
-        // dispatch(filterCars(findCars))
-        console.log("Search clicked!", carList.filter(item => item.make === selectedBrand));
-        console.log("Selected Brand:", selectedBrand);
-        console.log("Sffffffffff:", carList);
+        
+        updateFilteredCars(findCars)
+        // console.log("Search clicked!", carList.filter(item => item.make === selectedBrand));
+        // console.log("Selected Brand:", selectedBrand);
+        // console.log("Sffffffffff:", carList);
         // console.log("From Mileage:", fromMileage);
         // console.log("To Mileage:", toMileage);
       };

@@ -1,14 +1,8 @@
-import CarFilter from "components/CarFilter/CarFilter";
-import { MainConteinerCarsFilterBlock } from "components/CarFilter/CarFilter.styled";
-import CatalogList from "components/CatalogList/CatalogList";
+import CatalogMarking from "components/CatalogMarking/CatalogMarking";
 
 export default function Catalog() {
-
     return (
-    <MainConteinerCarsFilterBlock>
-        <CarFilter />
-        <CatalogList />
-    </MainConteinerCarsFilterBlock>
+       <CatalogMarking />
     );
   }
   

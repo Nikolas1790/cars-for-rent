@@ -12,10 +12,12 @@ export const fetchCars = createAsyncThunk("cars/fetchCars", async () => {
     } catch (error) {
       throw error;
     }
-  });
+  });  
   
   export const fetchCarById = createAsyncThunk("cars/fetchCarById", async (id) => {
     try {
+      
+      console.log("ffffffffffffffffff",  id)
       const response = await axios.get(`/car-list/${id}`);
       return response.data;
     } catch (error) {
@@ -23,13 +25,3 @@ export const fetchCars = createAsyncThunk("cars/fetchCars", async () => {
     }
   });
 
-//   export const filterCars = createAsyncThunk("cars/filterCars", async () => {
-//     try {
-//       const response = await axios.post(`/car-list`);
-      
-//       return response.data;
-
-//     } catch (error) {
-//       throw error;
-//     }
-//   });
