@@ -6,7 +6,6 @@ import { useState } from "react";
 
 export default function CatalogMarking() {
     const [filteredCars, setFilteredCars] = useState([]);
-    // console.log('ggggggggggggggggggggggg',filteredCars)
 
     const updateFilteredCars = (newFilteredCars) => {
         // console.log(newFilteredCars)

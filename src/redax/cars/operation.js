@@ -17,7 +17,7 @@ export const fetchCars = createAsyncThunk("cars/fetchCars", async () => {
   export const fetchCarById = createAsyncThunk("cars/fetchCarById", async (id) => {
     try {
       
-      console.log("ffffffffffffffffff",  id)
+      // console.log("ffffffffffffffffff",  id)
       const response = await axios.get(`/car-list/${id}`);
       return response.data;
     } catch (error) {

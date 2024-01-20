@@ -16,9 +16,11 @@ body {
   font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", 
 			"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
 			"Helvetica Neue", sans-serif;
+  font-size: 14px;
   font-weight: 400;
   font-style: normal;
-  color: ${color.secondaryGray};
+  line-height: 1.5;
+  color: ${color.blackPrimary};
   width: 100%;
   height: 100vh;
   margin: 0;  

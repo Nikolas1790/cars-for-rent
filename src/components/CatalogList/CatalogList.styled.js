@@ -6,15 +6,28 @@ max-width: 1184px;
 display:flex;
 flex-direction: row;
 flex-wrap: wrap;
-/* align-items: center; */
 justify-content: space-between;
 
 gap: 50px 29px;
 `;
 
 export const CardConteiner = styled.li`
+position: relative;
+
 width: 274px;
 height: 426px;
+`;
+
+export const CardHeartBtn = styled.button`
+position: absolute;
+top: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+
 `;
 
 export const CardImg = styled.img`
@@ -23,7 +36,7 @@ height: 268px;
 border-radius: 14px;
 background: ${color.lightGray};
 margin-bottom: 14px;
-
+object-fit: cover;
 
 `;
 
