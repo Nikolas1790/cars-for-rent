@@ -1,5 +1,5 @@
-import { HeaderContainer, InnerHeaderContainer, P, PhoneLink, PhoneNumber, PhoneSvg, StyledLink } from "./Header.styled";
-import icons from '../../img/icons.svg';
+import { HeaderContainer, InnerHeaderContainer, PhoneLink, StyledLink } from "./Header.styled";
+
 
 export default function Header() {
   return (
@@ -9,22 +9,11 @@ export default function Header() {
            <StyledLink to="/">Home page</StyledLink>
            <StyledLink to="/catalog">Car park</StyledLink>
            <StyledLink to="/favorites">Favorites</StyledLink>      
-          </nav>
-          <PhoneNumber>
+          </nav>          
           <PhoneLink href="tel:+380730000000">
-            
-              <P width={20} height={20} style={{ fill: 'green' }}>
-                <use href={`${icons}#icon-phones`} />
-              </P>
-            
             +380730000000
-            </PhoneLink>
-            </PhoneNumber>
-         </InnerHeaderContainer>
-         
-
+          </PhoneLink>            
+         </InnerHeaderContainer>  
     </HeaderContainer>
-
-
   );
 };

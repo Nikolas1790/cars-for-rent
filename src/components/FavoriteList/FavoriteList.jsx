@@ -4,11 +4,13 @@ import UniversalCardBlock from "components/UniversalCardBlock/UniversalCardBlock
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "redax/cars/carsSlice";
+import { fetchCarById } from "redax/cars/operation";
 
 export default function FavoriteList() {
   const dispatch = useDispatch();
   const [selectedCarId, setSelectedCarId] = useState(null);
   const favorites = useSelector((state) => state.cars.favorites);
+  
   // const carsOnRender = favorites && favorites === 0 ? carList : filteredCars;
 console.log(favorites)
 
@@ -30,7 +32,10 @@ console.log(listFavorits)
   };
 
   const handleLearnMoreClick = (id) => {
-    setSelectedCarId(id);
+    const findCar = carList.find(car => car.id === id)
+    console.log(findCar)
+    dispatch(fetchCarById(id))
+    setSelectedCarId(findCar);
   };
 
   const handleHeartClick = (id) => {
@@ -46,7 +51,7 @@ console.log(listFavorits)
           onHeartClick={handleHeartClick}
           onLearnMoreClick={handleLearnMoreClick}
         /> 
-         {selectedCarId  && <ModalWindow carId={selectedCarId} onClose={handleCloseModal}/>} 
+         {selectedCarId  && <ModalWindow car={selectedCarId} onClose={handleCloseModal}/>} 
       </MainConteinerCarsBlock>
     );
   }

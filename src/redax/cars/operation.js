@@ -5,6 +5,7 @@ axios.defaults.baseURL = "https://65a8255794c2c5762da85eab.mockapi.io/api/";
 
 export const fetchCars = createAsyncThunk("cars/fetchCars", async ({ page = 1, limit = 12 } = {}) => {
     try {
+      console.log(limit)
       const response = await axios.get(`/car-list?page=${page}&limit=${limit}`);
       
       return response.data;

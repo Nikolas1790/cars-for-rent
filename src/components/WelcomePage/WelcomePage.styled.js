@@ -3,12 +3,18 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom';
 
 
+
+
 export const WelcomePageContainer = styled.div`
        display: flex;
        align-items: center;
       justify-Content: center;
       flex-Direction: column;
       padding:60px 20px;
+      
+
+      width:1250px;
+      height: 100%;
 `
 
 export const WelcomePageTitle = styled.h1`
@@ -24,17 +30,19 @@ export const WelcomePageTitle = styled.h1`
 
 export const StyledBtnCarPark = styled(NavLink)` 
   display: inline-block;
-  text-decoration: none;
-  padding: 12px;
+  padding: 12px 50px;
   font-weight: 700;
   font-size: 18px;
-  line-height: 1.33;
-  color: ${color.blackPrimary};  
-  transition: transform 0.3s linear;
+  color: ${color.whitePrimary};  
+background: ${color.lightBlue};
+border-radius: 12px;
+
+  transition: transform 0.25s linear, background 0.25s linear;
   &:hover,
   &:focus {
-    color:  ${color.lightBlue};
-    transform: scale(1.1);
+    
+    background: ${color.darkBlue};
+    transform: scale(1.05);
     
   }
   &.active {

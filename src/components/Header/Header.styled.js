@@ -20,10 +20,9 @@ export const InnerHeaderContainer = styled.header`
 
 export const StyledLink = styled(NavLink)` 
   display: inline-block;
-  text-decoration: none;
-  padding: 12px;
+  padding: 8px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 1.33;
   color: ${color.blackPrimary};  
   transition: transform 0.3s linear;
   &:hover,
@@ -36,27 +35,23 @@ export const StyledLink = styled(NavLink)`
     color:  ${color.darkBlue};
     font-weight: bold;    
   }
+
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
 `
 
-export const PhoneNumber = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-
-padding: 12px;
-
-`;
-
-export const PhoneLink = styled.div`
-  
+export const PhoneLink = styled.a`
+    padding: 8px;
+  font-size: 16px;
   font-weight: 700;
+  transition: transform 0.3s linear;
 
+  &:hover,
+  &:focus {
+    color:  ${color.lightBlue};
+    transform: scale(1.1);
+    
+  }
 `;
 
-export const P = styled.svg`
-  
-  fill: black;
-  stroke: black;
-  background: black;
-color: red;
-`;

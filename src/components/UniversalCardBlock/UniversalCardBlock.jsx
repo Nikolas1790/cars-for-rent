@@ -4,6 +4,7 @@ import icons from '../../img/icons.svg';
 import { useSelector } from "react-redux";
 
 const UniversalCardBlock = ({ data, onHeartClick, onLearnMoreClick }) => {
+  // console.log(data)
     const favorites = useSelector((state) => state.cars.favorites);
     return (
     <CardsBlock>
