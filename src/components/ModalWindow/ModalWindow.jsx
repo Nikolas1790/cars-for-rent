@@ -1,15 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import {  ContentInputData, ModalAccessoriesBloc, ModalAccessoriesData, ModalAccessoriesTitle, ModalBtnClose, ModalDescriptionText, ModalRentalCarBtn, ModalRentalConditionsKids, ModalRentalConditionsSpanBlue, ModalRentalConditionsTitle, ModalRentalConteiner, ModalRentalKidsConteiner, ModalWindowBackdrop, ModalWindowContainer, ModalWindowImg, ModalWindowImgContainer, ModelAndYearTitle, ModelInputData, Paragraph } from "./ModalWindow.styled";
+import {  CarModel, ContentInputData, ModalAccessoriesBloc, ModalAccessoriesData, ModalAccessoriesTitle, ModalBtnClose, ModalDescriptionText,  ModalRentalCarLink, ModalRentalConditionsKids, ModalRentalConditionsSpanBlue, ModalRentalConditionsTitle, ModalRentalConteiner, ModalRentalKidsConteiner, ModalWindowBackdrop, ModalWindowContainer, ModalWindowImg,  ModelAndYearTitle, ModelInputData } from "./ModalWindow.styled";
 import React, { useCallback, useEffect } from "react";
 import { fetchCarById } from "redax/cars/operation";
-import { CarModel } from "components/CatalogList/CatalogList.styled";
+// import { CarModel } from "components/CatalogList/CatalogList.styled";
 import icons from '../../img/icons.svg';
 
 
 export default function ModalWindow({ carId, onClose }) {
   const dispatch = useDispatch();
   const selectedCar = useSelector((state) => state.cars.selectedCar);
-
   useEffect(() => {
     dispatch(fetchCarById(carId))
   }, [dispatch, carId ])
@@ -35,14 +34,14 @@ export default function ModalWindow({ carId, onClose }) {
       <ModalWindowBackdrop onClick={handleClose}>
         <ModalWindowContainer onClick={(e) => e.stopPropagation()}>
           
-        <ModalBtnClose onClick={handleClose}>
+          <ModalBtnClose onClick={handleClose}>
             <svg width={12} height={12} >
               <use href={`${icons}#icon-cross`} />
             </svg>
           </ModalBtnClose>
 
           
-            <ModalWindowImg alt={selectedCar.mdel}src={selectedCar.img}></ModalWindowImg>
+            <ModalWindowImg alt={selectedCar.model} src={selectedCar.img}></ModalWindowImg>
         
             <ModelAndYearTitle >{selectedCar.make} <CarModel>{selectedCar.model}</CarModel>, {selectedCar.year}</ModelAndYearTitle>
 
@@ -95,14 +94,14 @@ export default function ModalWindow({ carId, onClose }) {
             </ModalRentalKidsConteiner>      
 
             <ModalRentalKidsConteiner>  
-          <ModalRentalConditionsKids>Security deposite required</ModalRentalConditionsKids>
-          <ModalRentalConditionsKids>mileage: <ModalRentalConditionsSpanBlue>{selectedCar.mileage}</ModalRentalConditionsSpanBlue></ModalRentalConditionsKids>
-          <ModalRentalConditionsKids>Price: <ModalRentalConditionsSpanBlue>{selectedCar.rentalPrice}</ModalRentalConditionsSpanBlue></ModalRentalConditionsKids>
+              <ModalRentalConditionsKids>Security deposite required</ModalRentalConditionsKids>
+              <ModalRentalConditionsKids>mileage: <ModalRentalConditionsSpanBlue>{selectedCar.mileage}</ModalRentalConditionsSpanBlue></ModalRentalConditionsKids>
+              <ModalRentalConditionsKids>Price: <ModalRentalConditionsSpanBlue>{selectedCar.rentalPrice}</ModalRentalConditionsSpanBlue></ModalRentalConditionsKids>
             </ModalRentalKidsConteiner>
             </ModalRentalConteiner>
 
-            <ModalRentalCarBtn>Rental car</ModalRentalCarBtn>
-            
+            {/* <ModalRentalCarBtn>Rental car</ModalRentalCarBtn> */}
+            <ModalRentalCarLink href="tel:+380730000000">Rental car</ModalRentalCarLink>
         </ModalWindowContainer>
     </ModalWindowBackdrop>
     );

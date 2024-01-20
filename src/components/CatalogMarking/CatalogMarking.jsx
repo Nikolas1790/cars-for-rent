@@ -1,6 +1,6 @@
 import CarFilter from "components/CarFilter/CarFilter";
 import CatalogList from "components/CatalogList/CatalogList";
-import { MainConteinerCarsFilterBlock } from "components/CatalogMarking/CatalogMarking.styled";
+import { MainConteinerCarsBlock, MainConteinerCarsFilterBlock } from "components/CatalogMarking/CatalogMarking.styled";
 
 import { useState } from "react";
 
@@ -13,10 +13,10 @@ export default function CatalogMarking() {
       
     };
     return (
-    <MainConteinerCarsFilterBlock>
+    <MainConteinerCarsBlock>
         <CarFilter updateFilteredCars={updateFilteredCars}/>
         <CatalogList filteredCars={filteredCars}/>
-    </MainConteinerCarsFilterBlock>
+    </MainConteinerCarsBlock>
     );
   }
   

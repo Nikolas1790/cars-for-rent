@@ -13,6 +13,8 @@ width: 100%;
 `
 export const InnerHeaderContainer = styled.header`
   max-width: 1184px;
+  display:flex;
+  justify-content: space-between;
   margin: 0 auto; // Центрирование по горизонтали
 `;
 
@@ -35,3 +37,26 @@ export const StyledLink = styled(NavLink)`
     font-weight: bold;    
   }
 `
+
+export const PhoneNumber = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 12px;
+
+`;
+
+export const PhoneLink = styled.div`
+  
+  font-weight: 700;
+
+`;
+
+export const P = styled.svg`
+  
+  fill: black;
+  stroke: black;
+  background: black;
+color: red;
+`;

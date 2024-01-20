@@ -1,4 +1,3 @@
-
 import color from 'common/GlobalColers';
 import styled from 'styled-components'
 
@@ -35,7 +34,7 @@ export const ModalBtnClose = styled.button`
   align-items: center;
   width: 24px;
   height: 24px;
-  
+  background: transparent;
 
 `;
 
@@ -146,4 +145,18 @@ padding: 12px 50px;
 border-radius: 12px;
 color: ${color.whitePrimary};
 background: ${color.lightBlue};
+`;
+
+export const ModalRentalCarLink = styled.a`
+  display: inline-block;
+  padding: 12px 50px;
+  border-radius: 12px;
+  color: ${color.whitePrimary};
+  background: ${color.lightBlue};
+  text-decoration: none; /* Убираем подчеркивание, так как это теперь ссылка */
+`;
+
+
+export const CarModel = styled.span`
+color: ${color.lightBlue}
 `;

@@ -1,7 +1,7 @@
 
 import styled from 'styled-components'
 
-export const MainConteinerCarsFilterBlock = styled.div`
+export const MainConteinerCarsBlock = styled.div`
 display: flex;
 
 align-items: center;

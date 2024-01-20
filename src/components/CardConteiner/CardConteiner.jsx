@@ -43,9 +43,9 @@ console.log(car)
       <ButtonLearnMore type="button" onClick={handleLearnMoreClick}>
         Learn more
       </ButtonLearnMore>
-
-      {selectedCarId && <ModalWindow carId={selectedCarId} onClose={handleCloseModal} />}
       </CardConteiner>
+      {selectedCarId && <ModalWindow carId={selectedCarId} onClose={handleCloseModal} />}
+     
     </>
   );
 }

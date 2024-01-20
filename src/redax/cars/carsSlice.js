@@ -6,12 +6,23 @@ const initialState = {
     selectedCar: null,
     loading: false,
     error: null,
+    favorites: [],
   };
 
 const carSlice = createSlice({
     name: "cars",
     initialState,
-    reducers: {},
+    reducers: {
+      toggleFavorite: (state, action) => {
+        const carId = action.payload;
+        const ind = state.favorites.indexOf(carId);  
+        if (ind !== -1) {
+          state.favorites.splice(ind, 1);
+        } else {
+          state.favorites.push(carId);
+        }
+      },
+    },
     extraReducers: (builder) => {
       builder
         .addCase(fetchCars.pending, (state) => {
@@ -19,8 +30,12 @@ const carSlice = createSlice({
           state.error = null;
         })
         .addCase(fetchCars.fulfilled, (state, action) => {
+          console.log(state.cars)
           state.loading = false;
+
           state.cars = action.payload;
+          
+          console.log(state.cars)
         })
         .addCase(fetchCars.rejected, (state, action) => {
           state.loading = false;
@@ -44,4 +59,5 @@ const carSlice = createSlice({
     },
   });
   
+  export const { toggleFavorite } = carSlice.actions;
   export default carSlice.reducer;
