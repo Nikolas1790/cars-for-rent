@@ -20,11 +20,11 @@ height: 74px;
 `;
 
 export const CarsFilterLabelBlock = styled.label`
-display: block;
-margin-bottom: 8px;
-font-weight: 500;
-line-height: 1.29;
-color: ${color.secondaryGray};
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  line-height: 1.29;
+  color: ${color.secondaryGray};
 `;
 
 export const SelectStyledBrendBlock = styled.select`
@@ -184,5 +184,80 @@ export const DropdownItem = styled.li`
 
   &:hover {
     background-color: #f2f2f2; // ховер
+  }
+`;
+
+
+export const CustomRentalPrices = styled.div`
+  position: relative;
+  width: 125px;
+  font-size: 16px;
+  font-weight: 188px;
+  line-height: 1.25;
+  color: ${color.gryeTextColorBrands};
+`;
+
+
+export const DropdownButtonPrice = styled.button`
+  width: 100%;
+  height: 48px;
+  padding: 14px 89px 14px 18px;
+  border-radius: 14px;
+  background: ${color.lightGray};
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: red;
+  }
+`;
+
+
+export const DropdownListPrice = styled.ul`
+  position: absolute; 
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 188px;
+  padding: 14px 8px 14px 18px;
+  
+  overflow-y: auto; 
+  border-radius: 14px;
+  display: ${({ isOpenPrice }) => (isOpenPrice ? 'block' : 'none')};
+  z-index: 5;
+  background: ${color.whitePrimary};
+
+  border: 1px solid rgba(18, 20, 23, 0.05);
+  box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
+
+  &.isOpenPrice {
+    display: block;
+  }  
+  
+  scrollbar-width: 8px;
+  scrollbar-color: ${color.greyRgba} ${color.lightGray};
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 130px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+
+    background-color: ${color.greyRgba};
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${color.lightGray};
+    border-radius: 10px;
   }
 `;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CarsBrendBlock, CarsFilterBlock, CarsFilterLabelBlock, CarsMileageBlock, CarsMileageBlockFromTo, CarsPriceBlock, CarsSarchBtn, CustomDropdown, DropdownButton, DropdownItem, DropdownList, InputStyledMileageFrom, InputStyledMileageTo, SelectStyledPriceBlock } from "./CarFilter.styled";
+import { CarsBrendBlock, CarsFilterBlock, CarsFilterLabelBlock, CarsMileageBlock, CarsMileageBlockFromTo, CarsPriceBlock, CarsSarchBtn, CustomDropdown, CustomRentalPrices, DropdownButton, DropdownButtonPrice, DropdownItem,  DropdownList, DropdownListPrice, InputStyledMileageFrom, InputStyledMileageTo } from "./CarFilter.styled";
 import {  useSelector } from "react-redux";
 import { selectCarsCatalog } from "redax/cars/selector";
 import { toast } from 'react-toastify';
@@ -21,15 +21,18 @@ export default function CarFilter({updateFilteredCars}) {
     const [toMileage, setToMileage] = useState('');
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpenPrice, setIsOpenPrice] = useState(false);
 
     const handleBrandChange = (brand) => {
         setSelectedBrand(brand);
         setIsOpen(false);
     };
 
-    const handlePriceChange = (event) => {
-        setSelectedPrice(event.target.value);
-    };
+    const handleBrandChangePrice = (brand) => {
+      setSelectedPrice(brand);
+      setIsOpenPrice(false);
+  };
+
 
     const handleFromMileageChange = (event) => {
         setFromMileage(event.target.value.replace('From ', ''));
@@ -40,14 +43,12 @@ export default function CarFilter({updateFilteredCars}) {
     };
 
     const handleSearch = () => {
-        const findCars = carList.filter(item => item.make === selectedBrand)   
+        const findCars = carList.filter(item => item.make === selectedBrand)  
         if (findCars.length === 0) {
-            toast.error('This type of car was not found, see below .');            
+            toast.warning('Oops, the cats are coming.');            
         } 
         updateFilteredCars(findCars);          
     };
-
-
     
     return (
         <CarsFilterBlock>
@@ -55,6 +56,7 @@ export default function CarFilter({updateFilteredCars}) {
               <CarsBrendBlock>
                 <CarsFilterLabelBlock htmlFor="carBrand">Car brand</CarsFilterLabelBlock>
                 <DropdownButton onClick={() => setIsOpen(!isOpen)}>
+
                   {selectedBrand || 'Enter the text'}
                 </DropdownButton>
                 <DropdownList className={isOpen ? 'isOpen' : ''}>
@@ -66,23 +68,22 @@ export default function CarFilter({updateFilteredCars}) {
                 </DropdownList>
               </CarsBrendBlock>
             </CustomDropdown>
-       
-            <CarsPriceBlock>
-                <CarsFilterLabelBlock htmlFor="price">Price/1 hour</CarsFilterLabelBlock>
-                <div>
-                    <SelectStyledPriceBlock
-                        value={selectedPrice}
-                        onChange={handlePriceChange}
-                    >
-                        <option >To $</option>
-                           {rentalPrices.map(price => (
-                                <option key={price} value={price}>
-                                    {price}
-                                </option>
-                            ))}
-                    </SelectStyledPriceBlock>
-                </div>
-            </CarsPriceBlock>
+
+            <CustomRentalPrices>
+              <CarsPriceBlock>
+                <CarsFilterLabelBlock htmlFor="price">Price/1 hou</CarsFilterLabelBlock>
+                <DropdownButtonPrice onClick={() => setIsOpenPrice(!isOpenPrice)}>
+                  {selectedPrice || 'To\u00A0$'}
+                </DropdownButtonPrice>
+                <DropdownListPrice className={isOpenPrice ? 'isOpenPrice' : ''}>
+                  {rentalPrices.map((brand) => (
+                    <DropdownItem key={brand} onClick={() => handleBrandChangePrice(brand)}>
+                      {brand}
+                    </DropdownItem>
+                  ))}
+                </DropdownListPrice>
+              </CarsPriceBlock>
+            </CustomRentalPrices>
 
             <CarsMileageBlock>
                 <CarsFilterLabelBlock htmlFor="fromMileage">Car mileage / km</CarsFilterLabelBlock>

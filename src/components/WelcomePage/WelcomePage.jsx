@@ -13,14 +13,15 @@ import { AdvantageBlock, AdvantageItem, AdvantageTitle, ContacrUs, StyledBtnCarP
             </StyledBtnCarPark>
           </div>
           <AdvantageBlock>
-            <AdvantageTitle>Our advantages</AdvantageTitle>
+            <AdvantageTitle>Our advantages :</AdvantageTitle>
             <AdvantageItem>1. High Quality</AdvantageItem>
             <AdvantageItem>2. Affordable Prices</AdvantageItem>
             <AdvantageItem>3. Wide Selection</AdvantageItem>
             <AdvantageItem>4. Exceptional Service</AdvantageItem>
             <AdvantageItem>5. Fast Delivery</AdvantageItem>
+            
             <ContacrUs href="tel:+380730000000">
-            Contact us +380730000000
+              Contact us +380730000000
             </ContacrUs> 
           </AdvantageBlock>
         </WelcomePageContainer>

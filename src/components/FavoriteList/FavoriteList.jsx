@@ -4,11 +4,10 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "redax/cars/carsSlice";
 import { fetchCarById } from "redax/cars/operation";
-import { MainConteinerCarsBlock, TitleThereNothing, WrapperOfMainConteinerCarsBlock } from "./FavoriteList.style";
+import { CapitalDates, MainConteinerCarsBlock, PromoCode, TitleThereNothing, WrapperOfMainConteinerCarsBlock } from "./FavoriteList.style";
 import { selectCarsCatalog, selectCarsFavorites } from "redax/cars/selector";
 import screensaver from '../../img/photo-there-is-nithing.jpg';
 import Loader from "components/Loader/Loader";
-
 
 export default function FavoriteList() {
   const dispatch = useDispatch();
@@ -39,22 +38,27 @@ export default function FavoriteList() {
   }
     return (
       <WrapperOfMainConteinerCarsBlock>
-      <MainConteinerCarsBlock >
-      {listFavorits.length === 0 ? (
-        <div>
-          <img src={screensaver} alt="car" width={700} />
-          <TitleThereNothing>There's nothing here yet</TitleThereNothing>
-          </div>
-        ) : (
-        <UniversalCardBlock
-          data={listFavorits}
-          onHeartClick={handleHeartClick}
-          onLearnMoreClick={handleLearnMoreClick}
-        /> 
-        )}
-         {selectedCarId  && <ModalWindow car={selectedCarId} onClose={handleCloseModal}/>} 
-      </MainConteinerCarsBlock>
-     </WrapperOfMainConteinerCarsBlock>
+        <MainConteinerCarsBlock >
+          <h2>From <CapitalDates>1.02</CapitalDates> to <CapitalDates>29.02</CapitalDates>- <CapitalDates>30%</CapitalDates> discount using promotional code_    
+            <PromoCode href="tel:+380730000000" title="Press !">
+              2024
+            </PromoCode>
+          </h2>
+          {listFavorits.length === 0 ? (
+            <div>
+              <img src={screensaver} alt="car" width={700} />
+              <TitleThereNothing>There's nothing here yet</TitleThereNothing>
+            </div>
+          ) : (
+            <UniversalCardBlock
+              data={listFavorits}
+              onHeartClick={handleHeartClick}
+              onLearnMoreClick={handleLearnMoreClick}
+            /> 
+          )}
+           {selectedCarId  && <ModalWindow car={selectedCarId} onClose={handleCloseModal}/>} 
+        </MainConteinerCarsBlock>
+      </WrapperOfMainConteinerCarsBlock>
     );
   }
   
