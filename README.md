@@ -1,113 +1,52 @@
-# React homework template
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+# Car Rental Platform
+Welcome to our Car Rental Platform, where you can easily find and rent cars in Ukraine at affordable prices.
 
-## Создание репозитория по шаблону
+## Table of Contents
+1. About
+2. Car Listings
+3. Car Details
+4. Compare Cars
+5. How to Place an Order
+## About
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+![Creating repo from a template step 1](./src/img/herro.jpg)
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+Our platform offers a user-friendly experience for renting cars in Ukraine. Whether you need a vehicle for a short trip or an extended stay, we've got you covered.
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+![Deployment status](./src/img/home-page.jpg)
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+## Car Listings
+Explore our diverse range of cars available for rent. Use the convenient filters to narrow down your search based on price, brand, and mileage. Find the perfect car that suits your needs and budget.
 
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
+![Deployment status](./src/img/favourire.jpg)
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+### How to Use the Filters
+1. Car Brand: Select your preferred car brand from the list.
+2. Price: Choose a rental price per hour that fits your budget.
+3. Mileage: Set the desired mileage range for the car.
+## Car Details
+Click on a car to view its detailed information. Get to know more about the car's features, specifications, and available rental options.
 
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
+### Compare Cars
+Use our comparison tool to evaluate multiple cars side by side. Compare technical specifications, comfort levels, and any additional features to make an informed decision.
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+## How to Compare Cars
 
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
+1. Select the cars you want to compare.
+2. Click on the "Compare" button.
+3. Review the detailed comparison chart.
+##  How to Place an Order
+ Ready to rent the perfect car? Follow these simple steps to place your order:
 
-## Подготовка к работе
+1. Select the car you want to rent.
+2. Click on the "Rent Now" button.
+3. Provide the required information, including rental duration and personal details.
+4. Review your order summary.
+5. Confirm and proceed to payment.
+6. Receive confirmation of your booking.
+Enjoy your journey with our reliable and affordable car rental service!
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+For any inquiries or assistance, please contact us at [https://nikolas1790.github.io/cars-for-rent/](https://nikolas1790.github.io/cars-for-rent/).
 
-## Деплой
-
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
-
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
-
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
-
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
-
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
-
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
-
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+Thank you for choosing our Car Rental Platform!
