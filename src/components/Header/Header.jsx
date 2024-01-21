@@ -1,6 +1,5 @@
 import { HeaderContainer, InnerHeaderContainer, PhoneLink, StyledLink } from "./Header.styled";
 
-
 export default function Header() {
   return (
     <HeaderContainer>

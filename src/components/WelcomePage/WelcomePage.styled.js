@@ -1,20 +1,28 @@
 import color from 'common/GlobalColers'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom';
+import backgroundImage from '../../img/home-page-background.jpg';
 
-
+export const W = styled.div`
+  display: flex;
+align-items: center;
+flex-direction:column;
+`
 
 
 export const WelcomePageContainer = styled.div`
-       display: flex;
-       align-items: center;
-      justify-Content: center;
+  background: url(${backgroundImage}) no-repeat center center fixed;
+  background-size: cover;
+      display: flex;
+      align-items: center;
+      /* justify-Content: center; */
       flex-Direction: column;
       padding:60px 20px;
-      
+      width: 1440px;
+      padding: 50px 128px 128px;
+      /* background: red; */
+/* min-height:850px; */
 
-      width:1250px;
-      height: 100%;
 `
 
 export const WelcomePageTitle = styled.h1`
@@ -34,8 +42,8 @@ export const StyledBtnCarPark = styled(NavLink)`
   font-weight: 700;
   font-size: 18px;
   color: ${color.whitePrimary};  
-background: ${color.lightBlue};
-border-radius: 12px;
+  background: ${color.lightBlue};
+  border-radius: 12px;
 
   transition: transform 0.25s linear, background 0.25s linear;
   &:hover,

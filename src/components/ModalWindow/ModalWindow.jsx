@@ -1,25 +1,8 @@
-// import { useDispatch, useSelector } from "react-redux";
 import {  CarModel, ContentInputData, ModalAccessoriesBloc, ModalAccessoriesData, ModalAccessoriesTitle, ModalBtnClose, ModalDescriptionText,  ModalRentalCarLink, ModalRentalConditionsKids, ModalRentalConditionsSpanBlue, ModalRentalConditionsTitle, ModalRentalConteiner, ModalRentalKidsConteiner, ModalWindowBackdrop, ModalWindowContainer, ModalWindowImg,  ModelAndYearTitle, ModelInputData } from "./ModalWindow.styled";
 import React, { useCallback, useEffect } from "react";
-// import { fetchCarById } from "redax/cars/operation";
-// import { CarModel } from "components/CatalogList/CatalogList.styled";
 import icons from '../../img/icons.svg';
 
 export default function ModalWindow({ car, onClose }) {
-  console.log(car)
-  // const dispatch = useDispatch();
-  // const selectedCar = useSelector((state) => state.cars.selectedCar);
-  // useEffect(() => {
-  //   if (!selectedCar || selectedCar.id !== carId) {
-  //     // Если selectedCar отсутствует, отправьте запрос на загрузку данных
-  //     dispatch(fetchCarById(carId));
-  //   }
-  // }, [dispatch, carId, selectedCar])
-  
-
-
-
-  
 
   const handleClose = useCallback(() => {
     onClose();
@@ -107,8 +90,7 @@ export default function ModalWindow({ car, onClose }) {
             </ModalRentalKidsConteiner>
             </ModalRentalConteiner>
 
-            {/* <ModalRentalCarBtn>Rental car</ModalRentalCarBtn> */}
-            <ModalRentalCarLink href="tel:+380730000000">Rental car</ModalRentalCarLink>
+             <ModalRentalCarLink href="tel:+380730000000">Rental car</ModalRentalCarLink>
         </ModalWindowContainer>
     </ModalWindowBackdrop>
     );

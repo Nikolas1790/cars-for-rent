@@ -1,7 +1,7 @@
-
 import { useState } from "react";
 import { CarsBrendBlock, CarsFilterBlock, CarsFilterLabelBlock, CarsMileageBlock, CarsMileageBlockFromTo, CarsPriceBlock, CarsSarchBtn, InputStyledMileageFrom, InputStyledMileageTo, SelectStyledBrendBlock, SelectStyledPriceBlock } from "./CarFilter.styled";
 import {  useSelector } from "react-redux";
+import { selectCarsCatalog } from "redax/cars/selector";
 
 const carBrands = [
     "Buick", "Volvo", "HUMMER", "Subaru", "Mitsubishi", "Nissan", "Lincoln",
@@ -12,8 +12,7 @@ const carBrands = [
   const rentalPrices = Array.from({ length: 50 }, (_, index) => (index+1) * 10);
 
 export default function CarFilter({updateFilteredCars}) {
-  // const dispatch = useDispatch();
-  const carList = useSelector((state) => state.cars.cars);
+    const carList = useSelector(selectCarsCatalog);
 
     const [selectedBrand, setSelectedBrand] = useState('');
     const [selectedPrice, setSelectedPrice] = useState('');
@@ -22,30 +21,24 @@ export default function CarFilter({updateFilteredCars}) {
 
     const handleBrandChange = (event) => {
         setSelectedBrand(event.target.value);
-      };
-      const handlePriceChange = (event) => {
+    };
+    const handlePriceChange = (event) => {
         console.log(event.target.value)
         setSelectedPrice(event.target.value);
-      };
+    };
 
-      const handleFromMileageChange = (event) => {
+    const handleFromMileageChange = (event) => {
         setFromMileage(event.target.value.replace('From ', ''));
-      };
+    };
     
-      const handleToMileageChange = (event) => {
+    const handleToMileageChange = (event) => {
         setToMileage(event.target.value.replace('To ', ''));
-      };
+    };
 
-      const handleSearch = () => {
-        const findCars = carList.filter(item => item.make === selectedBrand)
-        
+    const handleSearch = () => {
+        const findCars = carList.filter(item => item.make === selectedBrand)        
         updateFilteredCars(findCars)
-        // console.log("Search clicked!", carList.filter(item => item.make === selectedBrand));
-        // console.log("Selected Brand:", selectedBrand);
-        // console.log("Sffffffffff:", carList);
-        // console.log("From Mileage:", fromMileage);
-        // console.log("To Mileage:", toMileage);
-      };
+    };
 
     return (
         <CarsFilterBlock>
@@ -102,14 +95,10 @@ export default function CarFilter({updateFilteredCars}) {
                       onChange={handleToMileageChange}
                     />
                 </CarsMileageBlockFromTo>
-            </CarsMileageBlock>
-      
+            </CarsMileageBlock>      
             <div>
                 <CarsSarchBtn onClick={handleSearch}>Search</CarsSarchBtn>
-            </div>
-
-
-        
+            </div>        
         </CarsFilterBlock>
     );
   }

@@ -2,10 +2,10 @@ import React from "react";
 import { CardConteiner, CardHeartBtn, CardImg, CardMainInfo, BriefMainInfo, ButtonLearnMore, CardsBlock, CarModel, AddressInfo } from "./UniversalCardBlock.styled";
 import icons from '../../img/icons.svg';
 import { useSelector } from "react-redux";
+import { selectCarsFavorites } from "redax/cars/selector";
 
 const UniversalCardBlock = ({ data, onHeartClick, onLearnMoreClick }) => {
-  // console.log(data)
-    const favorites = useSelector((state) => state.cars.favorites);
+    const favorites = useSelector(selectCarsFavorites);
     return (
     <CardsBlock>
       {Array.isArray(data) && data.map((item) => (

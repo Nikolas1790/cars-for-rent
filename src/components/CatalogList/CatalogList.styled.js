@@ -6,6 +6,7 @@ export const CenteredContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 100px; // Когда исчезнет кнопка, мардж пропадёт
 `;
 
 export const CarBtnLoadMore = styled.button`

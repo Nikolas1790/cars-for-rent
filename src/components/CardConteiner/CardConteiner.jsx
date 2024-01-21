@@ -8,7 +8,7 @@ import icons from '../../img/icons.svg';
 export default function CardConteiner({ car }) {
   const [selectedCarId, setSelectedCarId] = useState(null);
   const [isHeartClicked, setIsHeartClicked] = useState(false);
-console.log(car)
+
   const handleLearnMoreClick = () => {
     setSelectedCarId(car.id);
   };

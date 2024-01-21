@@ -30,14 +30,8 @@ const carSlice = createSlice({
           state.error = null;
         })
         .addCase(fetchCars.fulfilled, (state, action) => {
-          console.log(state.cars)
-          console.log(action.payload)
           state.loading = false;
-
-          // state.cars = [...state.cars, ...action.payload];
           state.cars = action.payload;
-          // state.cars = state.cars.length === 12 ? action.payload : [...state.cars, ...action.payload];
-          console.log(state.cars)
         })
         .addCase(fetchCars.rejected, (state, action) => {
           state.loading = false;
@@ -57,7 +51,6 @@ const carSlice = createSlice({
           state.loading = false;
           state.error = action.error.message;
         })
-
 
     },
   });

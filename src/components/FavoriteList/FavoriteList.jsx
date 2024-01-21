@@ -1,31 +1,21 @@
-import { MainConteinerCarsBlock } from "components/CatalogMarking/CatalogMarking.styled";
+
 import ModalWindow from "components/ModalWindow/ModalWindow";
 import UniversalCardBlock from "components/UniversalCardBlock/UniversalCardBlock";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "redax/cars/carsSlice";
 import { fetchCarById } from "redax/cars/operation";
+import { MainConteinerCarsBlock, WrapperOfMainConteinerCarsBlock } from "./FavoriteList.style";
+import { selectCarsCatalog, selectCarsFavorites } from "redax/cars/selector";
 
 export default function FavoriteList() {
   const dispatch = useDispatch();
   const [selectedCarId, setSelectedCarId] = useState(null);
-  const favorites = useSelector((state) => state.cars.favorites);
   
-  // const carsOnRender = favorites && favorites === 0 ? carList : filteredCars;
-console.log(favorites)
+  const favorites = useSelector(selectCarsFavorites);  
+  const carList = useSelector(selectCarsCatalog);
 
-
-// const dispatch = useDispatch();
-const carList = useSelector((state) => state.cars.cars);
-
-const listFavorits = carList.filter(item => favorites.includes(item.id))
-
-console.log(listFavorits)
-
-// useEffect(() => {
-//   dispatch(fetchCars({ page: currentPage }));
-// }, [dispatch, currentPage]);
-
+  const listFavorits = carList.filter(item => favorites.includes(item.id))
 
   const handleCloseModal = () => {
     setSelectedCarId(null);
@@ -40,12 +30,10 @@ console.log(listFavorits)
 
   const handleHeartClick = (id) => {
     dispatch(toggleFavorite(id));
-  };
-
-  
+  };  
     return (
+      <WrapperOfMainConteinerCarsBlock>
       <MainConteinerCarsBlock >
-
         <UniversalCardBlock
           data={listFavorits}
           onHeartClick={handleHeartClick}
@@ -53,6 +41,7 @@ console.log(listFavorits)
         /> 
          {selectedCarId  && <ModalWindow car={selectedCarId} onClose={handleCloseModal}/>} 
       </MainConteinerCarsBlock>
+     </WrapperOfMainConteinerCarsBlock>
     );
   }
   

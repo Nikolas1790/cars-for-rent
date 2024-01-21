@@ -8,7 +8,7 @@ display:flex;
 flex-wrap: wrap;
 justify-content: start;
 gap: 50px 29px;
-margin-bottom: 100px;
+/* margin-bottom: 100px; */
 `;
 
 export const CardConteiner = styled.li`

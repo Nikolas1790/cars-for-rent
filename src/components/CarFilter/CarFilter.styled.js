@@ -25,10 +25,13 @@ height: 74px;
 export const CarsFilterLabelBlock = styled.label`
 display: block;
 margin-bottom: 8px;
+font-weight: 500;
+line-height: 1.29;
+color: ${color.secondaryGray};
 `;
 
 export const SelectStyledBrendBlock = styled.select`
-height: 48px;
+  height: 48px;
   display: flex;
   padding: 14px 89px 14px 18px;
 
@@ -36,13 +39,12 @@ height: 48px;
   background: ${color.lightGray};
   border: none;
   width: 100%; 
-
+  outline: none; 
 `;
 
 export const CarsPriceBlock = styled.div`
 width: 125px;
 height: 74px;
-
 `;
 
 export const SelectStyledPriceBlock = styled.select`
@@ -54,6 +56,7 @@ export const SelectStyledPriceBlock = styled.select`
   background: ${color.lightGray};
   border: none;
   width: 100%; 
+  outline: none; 
 `;
 
 export const CarsMileageBlock = styled.div`
@@ -94,7 +97,9 @@ outline: none;
 export const CarsSarchBtn = styled.button`
 width: 136px;
 height: 48px;
+font-size: 14px;
 font-weight: 600;
+line-height: 1.43;
 padding: 14px 44px;
 align-items: center;
 

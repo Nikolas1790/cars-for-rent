@@ -1,8 +1,9 @@
-import { StyledBtnCarPark, WelcomePageContainer, WelcomePageTitle } from "./WelcomePage.styled";
+import { StyledBtnCarPark, W, WelcomePageContainer, WelcomePageTitle } from "./WelcomePage.styled";
   
   export default function WelcomePage() {
     return (
-      <WelcomePageContainer>
+      <W>
+      <WelcomePageContainer >
         <WelcomePageTitle>
           Cars for the most demanding customers at reasonable prices
         </WelcomePageTitle>
@@ -12,6 +13,7 @@ import { StyledBtnCarPark, WelcomePageContainer, WelcomePageTitle } from "./Welc
           </StyledBtnCarPark>
         </div>
       </WelcomePageContainer>
+      </W>
     );
   }
   
