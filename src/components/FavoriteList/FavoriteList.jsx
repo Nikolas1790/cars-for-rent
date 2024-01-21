@@ -1,4 +1,3 @@
-
 import ModalWindow from "components/ModalWindow/ModalWindow";
 import UniversalCardBlock from "components/UniversalCardBlock/UniversalCardBlock";
 import { useState } from "react";
@@ -24,7 +23,6 @@ export default function FavoriteList() {
 
   const handleLearnMoreClick = (id) => {
     const findCar = carList.find(car => car.id === id)
-    console.log(findCar)
     dispatch(fetchCarById(id))
     setSelectedCarId(findCar);
   };

@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom';
 import backgroundImage from '../../img/home-page.jpg';
 
-
-
 export const WraperBox = styled.div`
   display: flex;
   align-items: center;
@@ -13,7 +11,6 @@ export const WraperBox = styled.div`
   background-size: cover;
   min-height: 640px;
 `
-
 
 export const WelcomePageContainer = styled.div`
   display: flex;
@@ -25,15 +22,13 @@ export const WelcomePageContainer = styled.div`
 `
 
 export const WelcomePageTitle = styled.h1`
-/* color: ${color.blackPrimary}; */
-      font-Weight: 500;
-      font-Size: 48px;
-      text-Align: center;
-      margin-Bottom: 40px; 
-      line-height: 1.33;
-      max-width: 900px;
+  font-Weight: 500;
+  font-Size: 48px;
+  text-Align: center;
+  margin-Bottom: 40px; 
+  line-height: 1.33;
+  max-width: 900px;
 `
-
 
 export const StyledBtnCarPark = styled(NavLink)` 
   display: inline-block;

@@ -9,12 +9,12 @@ export const CenteredContainer = styled.div`
 `;
 
 export const CarBtnLoadMore = styled.button`
+  width: 79px;
+  height: 24px;
   font-size: 16px;
   font-weight: 500;
   text-decoration-line: underline;
 
-  width: 79px;
-  height: 24px;
   color: ${color.lightBlue};
   background: transparent;
 `;

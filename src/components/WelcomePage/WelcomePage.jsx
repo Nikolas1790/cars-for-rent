@@ -1,8 +1,7 @@
 import { StyledBtnCarPark, WelcomePageContainer, WelcomePageTitle, WraperBox } from "./WelcomePage.styled";
   
   export default function WelcomePage() {
-    return (
-     
+    return (     
       <WraperBox>
         <WelcomePageContainer >
           <WelcomePageTitle>
@@ -14,8 +13,7 @@ import { StyledBtnCarPark, WelcomePageContainer, WelcomePageTitle, WraperBox } f
             </StyledBtnCarPark>
           </div>
         </WelcomePageContainer>
-      </WraperBox>
-     
+      </WraperBox>     
     );
   }
   

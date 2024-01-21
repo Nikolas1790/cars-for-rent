@@ -20,17 +20,14 @@ export default function CarFilter({updateFilteredCars}) {
     const [fromMileage, setFromMileage] = useState('');
     const [toMileage, setToMileage] = useState('');
 
-
     const [isOpen, setIsOpen] = useState(false);
-
 
     const handleBrandChange = (brand) => {
         setSelectedBrand(brand);
         setIsOpen(false);
-      };
+    };
 
     const handlePriceChange = (event) => {
-        console.log(event.target.value)
         setSelectedPrice(event.target.value);
     };
 
@@ -54,39 +51,21 @@ export default function CarFilter({updateFilteredCars}) {
     
     return (
         <CarsFilterBlock>
-
-            {/* <CarsBrendBlock>
+            <CustomDropdown>
+              <CarsBrendBlock>
                 <CarsFilterLabelBlock htmlFor="carBrand">Car brand</CarsFilterLabelBlock>
-                <div>
-                    <SelectStyledBrendBlock
-                        value={selectedBrand}
-                        onChange={handleBrandChange}
-                    >
-                        <option >Enter the text</option>
-                            {carBrands.map(brand => (
-                                <option key={brand} value={brand}>
-                                   {brand}
-                                </option>
-                            ))}
-                    </SelectStyledBrendBlock>
-                </div>
-            </CarsBrendBlock> */}
-
-<CustomDropdown>
-      <CarsBrendBlock>
-        <CarsFilterLabelBlock htmlFor="carBrand">Car brand</CarsFilterLabelBlock>
-        <DropdownButton onClick={() => setIsOpen(!isOpen)}>
-          {selectedBrand || 'Enter the text'}
-        </DropdownButton>
-        <DropdownList className={isOpen ? 'isOpen' : ''}>
-          {carBrands.map((brand) => (
-            <DropdownItem key={brand} onClick={() => handleBrandChange(brand)}>
-              {brand}
-            </DropdownItem>
-          ))}
-        </DropdownList>
-      </CarsBrendBlock>
-    </CustomDropdown>
+                <DropdownButton onClick={() => setIsOpen(!isOpen)}>
+                  {selectedBrand || 'Enter the text'}
+                </DropdownButton>
+                <DropdownList className={isOpen ? 'isOpen' : ''}>
+                  {carBrands.map((brand) => (
+                    <DropdownItem key={brand} onClick={() => handleBrandChange(brand)}>
+                      {brand}
+                    </DropdownItem>
+                  ))}
+                </DropdownList>
+              </CarsBrendBlock>
+            </CustomDropdown>
        
             <CarsPriceBlock>
                 <CarsFilterLabelBlock htmlFor="price">Price/1 hour</CarsFilterLabelBlock>

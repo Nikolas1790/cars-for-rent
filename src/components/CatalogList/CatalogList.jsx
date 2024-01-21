@@ -1,5 +1,4 @@
 import React, { useEffect, useState} from "react";
-
 import { CarBtnLoadMore, CenteredContainer } from "./CatalogList.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCarById, fetchCars } from "redax/cars/operation";

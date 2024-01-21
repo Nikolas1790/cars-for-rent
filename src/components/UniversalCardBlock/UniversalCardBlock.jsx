@@ -15,20 +15,19 @@ const UniversalCardBlock = ({ data, onHeartClick, onLearnMoreClick }) => {
               <use href={`${icons}#icon-${favorites.includes(item.id) ? 'active-heart' : 'normal-heart'}`} />
             </svg>
           </CardHeartBtn>
-
           <div>
-                  <CardImg src={item.img}
-                      alt={item.make}   
-                  />
-                    <CardMainInfo>
-                        <p >{item.make} <CarModel>{item.model}</CarModel>, {item.year}</p>
-                        <p>{item.rentalPrice}</p>
-                    </CardMainInfo>
-                    <BriefMainInfo>
-                      <AddressInfo>{item.address}| {item.rentalCompany}</AddressInfo>
-                      <p> { item.type} |{item.make} |{item.id} | {item.accessories[0]}</p>
-                    </BriefMainInfo>
-              </div>
+            <CardImg src={item.img}
+                alt={item.make}   
+            />
+            <CardMainInfo>
+                <p >{item.make} <CarModel>{item.model}</CarModel>, {item.year}</p>
+                <p>{item.rentalPrice}</p>
+            </CardMainInfo>
+            <BriefMainInfo>
+              <AddressInfo>{item.address}| {item.rentalCompany}</AddressInfo>
+              <p> { item.type} |{item.make} |{item.id} | {item.accessories[0]}</p>
+            </BriefMainInfo>
+          </div>
           <ButtonLearnMore type="button" onClick={() => onLearnMoreClick(item.id)}>
             Learn more
           </ButtonLearnMore>

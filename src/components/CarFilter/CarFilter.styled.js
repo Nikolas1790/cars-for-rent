@@ -1,8 +1,6 @@
 import color from 'common/GlobalColers';
 import styled from 'styled-components'
 
-
-
 export const CarsFilterBlock = styled.div`
 display: flex;
 align-items: flex-end;
@@ -19,7 +17,6 @@ margin-bottom: 50px;
 export const CarsBrendBlock = styled.div`
 width: 224px;
 height: 74px;
-
 `;
 
 export const CarsFilterLabelBlock = styled.label`
@@ -28,30 +25,19 @@ margin-bottom: 8px;
 font-weight: 500;
 line-height: 1.29;
 color: ${color.secondaryGray};
-
-
 `;
 
-// export const CarsFilterBlockSelect = styled.option`
-// color: #121417;
-
-// font-size: 18px;
-// font-weight: 500;
-// line-height: 20px; /* 111.111% */
-// `;
-
 export const SelectStyledBrendBlock = styled.select`
-  height: 48px;
   display: flex;
   padding: 14px 89px 14px 18px;
 
+  width: 100%; 
+  height: 48px;
+  outline: none;  
+  
   border-radius: 14px;
   background: ${color.lightGray};
-  border: none;
-  width: 100%; 
-  outline: none;   
-
-  
+  border: none;   
 `;
 
 export const CarsPriceBlock = styled.div`
@@ -59,23 +45,20 @@ export const CarsPriceBlock = styled.div`
   height: 74px;
 `;
 
-export const SelectStyledPriceBlock = styled.select`
+export const SelectStyledPriceBlock = styled.select`  
+  display: flex;  
+  width: 100%; 
   height: 48px;
-  display: flex;
   padding: 14px  18px;
-
+  border: none;  
+  outline: none; 
   border-radius: 14px;
   background: ${color.lightGray};
-  border: none;
-  width: 100%; 
-  outline: none; 
 `;
 
 export const CarsMileageBlock = styled.div`
 width: 320px;
 height: 74px;
-
-
 `;
 
 export const CarsMileageBlockFromTo = styled.div`
@@ -92,7 +75,6 @@ border: none;
 border-right: 1px solid rgba(138, 138, 137, 0.20);
 background: ${color.lightGray};
 outline: none;
-
 `;
 
 export const InputStyledMileageTo = styled.input`
@@ -107,21 +89,18 @@ outline: none;
 `;
 
 export const CarsSarchBtn = styled.button`
+align-items: center;
 width: 136px;
 height: 48px;
 font-size: 14px;
 font-weight: 600;
 line-height: 1.43;
 padding: 14px 44px;
-align-items: center;
 
 border-radius: 12px;
 color: ${color.whitePrimary};
 background: ${color.lightBlue};
 `;
-
-
-
 
 export const CustomDropdown = styled.div`
   position: relative;
@@ -130,10 +109,7 @@ export const CustomDropdown = styled.div`
   font-weight: 500;
   line-height: 1.25;
   color: ${color.gryeTextColorBrands};
-  /* overflow-y: auto; // Добавлено свойство overflow-y
-  max-height: 200px;  */
 `;
-
 
 export const DropdownButton = styled.button`
   width: 100%;
@@ -145,11 +121,6 @@ export const DropdownButton = styled.button`
   outline: none;
   cursor: pointer;
   position: relative;
-
-  /* color: red; */
-
-
-
 
   &::after {
     content: '\25BC';
@@ -163,16 +134,15 @@ export const DropdownButton = styled.button`
 
 
 export const DropdownList = styled.ul`
-  overflow-y: auto; 
-  height: 272px;
-  padding: 14px 8px 14px 18px;
-
-  position: absolute;
+  position: absolute; 
   top: 100%;
   left: 0;
   width: 100%;
+  height: 272px;
+  padding: 14px 8px 14px 18px;
+  
+  overflow-y: auto; 
   border-radius: 14px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   z-index: 5;
   background: ${color.whitePrimary};
@@ -182,8 +152,7 @@ export const DropdownList = styled.ul`
 
   &.isOpen {
     display: block;
-  }
-  
+  }  
   
   scrollbar-width: 8px;
   scrollbar-color: ${color.greyRgba} ${color.lightGray};

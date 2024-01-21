@@ -7,7 +7,8 @@ const color = {
     lightBlue: '#3470FF',  
     darkBlue: '#0B44CD', 
     lightGray: ' #F3F3F2',
-    gryeTextColorBrands: 'rgba(18, 20, 23, 0.20)'     
+    gryeTextColorBrands: 'rgba(18, 20, 23, 0.20)',
+    whiteShade: '#F9F9F9'   
   };
   
   export default color;
