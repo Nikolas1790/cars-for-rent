@@ -38,6 +38,7 @@ export const StyledBtnCarPark = styled(NavLink)`
   color: ${color.whitePrimary};  
   background: ${color.lightBlue};
   border-radius: 12px;
+  margin-bottom: 80px;
 
   transition: transform 0.25s linear, background 0.25s linear;
   &:hover,
@@ -52,3 +53,24 @@ export const StyledBtnCarPark = styled(NavLink)`
     font-weight: bold;    
   }
 `
+
+export const AdvantageBlock = styled.div`
+display:flex;
+flex-direction: column;
+margin-left: auto;
+`;
+
+export const AdvantageTitle = styled.h3`
+  margin-bottom: 8px;
+  font-size: 30px;
+  font-weight: 700;
+  color: ${color.lightBlue};
+  text-shadow: 1px 1px 0px ${color.whitePrimary};
+`;
+
+export const AdvantageItem = styled.div`
+  font-size: 20px;
+  font-weight: 700;
+  color: ${color.lightBlue};
+  text-shadow: 1px 1px 0px ${color.whitePrimary};
+`;
