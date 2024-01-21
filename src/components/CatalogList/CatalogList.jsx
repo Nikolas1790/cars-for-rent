@@ -45,8 +45,6 @@ export default function CatalogList({ filteredCars }) {
   const handleLoadMoreClick = () => { 
     setCurrentPage(prevPage => prevPage + 1);  
   };
-console.log(carList.length)
-console.log(currentPage * 12)
 
   return (  
     <div>
@@ -55,7 +53,7 @@ console.log(currentPage * 12)
         onHeartClick={handleHeartClick}
         onLearnMoreClick={handleLearnMoreClick}
       /> 
-        {carList.length >= currentPage * 12 && (
+        {carList.length >= currentPage * 12 && carsOnRender.length > 1 && (
           <CenteredContainer>
             <CarBtnLoadMore type="button" onClick={handleLoadMoreClick}>Load more</CarBtnLoadMore>
           </CenteredContainer>

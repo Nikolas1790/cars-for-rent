@@ -1,13 +1,13 @@
 
-export default function ButtonLearnMore() {
-    const handleClick = () => {
+// export default function ButtonLearnMore() {
+//     const handleClick = () => {
          
-      };
-  return (
+//       };
+//   return (
     
-<ButtonLearnMore type="button"  onClick={handleClick} >
-    Learn more
-</ButtonLearnMore>
+// <ButtonLearnMore type="button"  onClick={handleClick} >
+//     Learn more
+// </ButtonLearnMore>
    
-  );
-}
+//   );
+// }

@@ -10,8 +10,16 @@ export const MainConteinerCarsBlock = styled.div`
 display: flex;
 align-items: center;
 flex-direction:column;
-width: 1440px;
+max-width: 1440px;
 height: auto;
 
 padding: 50px 128px 128px;
+`;
+
+
+export const TitleThereNothing = styled.p`
+ font-size: 20px;
+ font-weight: 700px;
+ text-align: center;
+margin: 0 auto;
 `;

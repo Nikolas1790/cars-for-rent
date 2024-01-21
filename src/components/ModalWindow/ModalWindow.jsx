@@ -3,7 +3,7 @@ import React, { useCallback, useEffect } from "react";
 import icons from '../../img/icons.svg';
 
 export default function ModalWindow({ car, onClose }) {
-
+console.log(onClose)
   const handleClose = useCallback(() => {    
     onClose();
   }, [onClose]);
@@ -30,7 +30,7 @@ export default function ModalWindow({ car, onClose }) {
       handleBodyScroll(false);
     };
   }, [handleKeyDown]);
-  
+
     return (
       <ModalWindowBackdrop onClick={handleClose}>
         <ModalWindowContainer onClick={(e) => e.stopPropagation()}>

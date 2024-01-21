@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { CarsBrendBlock, CarsFilterBlock, CarsFilterLabelBlock, CarsMileageBlock, CarsMileageBlockFromTo, CarsPriceBlock, CarsSarchBtn, InputStyledMileageFrom, InputStyledMileageTo, SelectStyledBrendBlock, SelectStyledPriceBlock } from "./CarFilter.styled";
+import { CarsBrendBlock, CarsFilterBlock, CarsFilterLabelBlock, CarsMileageBlock, CarsMileageBlockFromTo, CarsPriceBlock, CarsSarchBtn, CustomDropdown, DropdownButton, DropdownItem, DropdownList, InputStyledMileageFrom, InputStyledMileageTo, SelectStyledPriceBlock } from "./CarFilter.styled";
 import {  useSelector } from "react-redux";
 import { selectCarsCatalog } from "redax/cars/selector";
+import { toast } from 'react-toastify';
 
 const carBrands = [
     "Buick", "Volvo", "HUMMER", "Subaru", "Mitsubishi", "Nissan", "Lincoln",
@@ -19,9 +20,15 @@ export default function CarFilter({updateFilteredCars}) {
     const [fromMileage, setFromMileage] = useState('');
     const [toMileage, setToMileage] = useState('');
 
-    const handleBrandChange = (event) => {
-        setSelectedBrand(event.target.value);
-    };
+
+    const [isOpen, setIsOpen] = useState(false);
+
+
+    const handleBrandChange = (brand) => {
+        setSelectedBrand(brand);
+        setIsOpen(false);
+      };
+
     const handlePriceChange = (event) => {
         console.log(event.target.value)
         setSelectedPrice(event.target.value);
@@ -36,22 +43,26 @@ export default function CarFilter({updateFilteredCars}) {
     };
 
     const handleSearch = () => {
-        const findCars = carList.filter(item => item.make === selectedBrand)        
-        updateFilteredCars(findCars)
+        const findCars = carList.filter(item => item.make === selectedBrand)   
+        if (findCars.length === 0) {
+            toast.error('This type of car was not found, see below .');            
+        } 
+        updateFilteredCars(findCars);          
     };
 
+
+    
     return (
         <CarsFilterBlock>
 
-            <CarsBrendBlock>
+            {/* <CarsBrendBlock>
                 <CarsFilterLabelBlock htmlFor="carBrand">Car brand</CarsFilterLabelBlock>
                 <div>
                     <SelectStyledBrendBlock
-                        id="carBrand"
                         value={selectedBrand}
                         onChange={handleBrandChange}
                     >
-                        <option value="">Enter the text</option>
+                        <option >Enter the text</option>
                             {carBrands.map(brand => (
                                 <option key={brand} value={brand}>
                                    {brand}
@@ -59,17 +70,32 @@ export default function CarFilter({updateFilteredCars}) {
                             ))}
                     </SelectStyledBrendBlock>
                 </div>
-            </CarsBrendBlock>
+            </CarsBrendBlock> */}
+
+<CustomDropdown>
+      <CarsBrendBlock>
+        <CarsFilterLabelBlock htmlFor="carBrand">Car brand</CarsFilterLabelBlock>
+        <DropdownButton onClick={() => setIsOpen(!isOpen)}>
+          {selectedBrand || 'Enter the text'}
+        </DropdownButton>
+        <DropdownList className={isOpen ? 'isOpen' : ''}>
+          {carBrands.map((brand) => (
+            <DropdownItem key={brand} onClick={() => handleBrandChange(brand)}>
+              {brand}
+            </DropdownItem>
+          ))}
+        </DropdownList>
+      </CarsBrendBlock>
+    </CustomDropdown>
        
             <CarsPriceBlock>
                 <CarsFilterLabelBlock htmlFor="price">Price/1 hour</CarsFilterLabelBlock>
                 <div>
                     <SelectStyledPriceBlock
-                        id="price"
                         value={selectedPrice}
                         onChange={handlePriceChange}
                     >
-                        <option value="">To $</option>
+                        <option >To $</option>
                            {rentalPrices.map(price => (
                                 <option key={price} value={price}>
                                     {price}

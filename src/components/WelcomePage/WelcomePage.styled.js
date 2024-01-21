@@ -1,28 +1,27 @@
 import color from 'common/GlobalColers'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom';
-import backgroundImage from '../../img/home-page-background.jpg';
+import backgroundImage from '../../img/home-page.jpg';
 
-export const W = styled.div`
+
+
+export const WraperBox = styled.div`
   display: flex;
-align-items: center;
-flex-direction:column;
+  align-items: center;
+  flex-direction:column;
+  background: url(${backgroundImage}) no-repeat center center fixed;
+  background-size: cover;
+  min-height: 640px;
 `
 
 
 export const WelcomePageContainer = styled.div`
-  background: url(${backgroundImage}) no-repeat center center fixed;
-  background-size: cover;
-      display: flex;
-      align-items: center;
-      /* justify-Content: center; */
-      flex-Direction: column;
-      padding:60px 20px;
-      width: 1440px;
-      padding: 50px 128px 128px;
-      /* background: red; */
-/* min-height:850px; */
-
+  display: flex;
+  align-items: center;
+  flex-Direction: column;
+  padding:60px 20px;
+  max-width: 1440px;
+  padding: 50px 128px 128px;
 `
 
 export const WelcomePageTitle = styled.h1`
