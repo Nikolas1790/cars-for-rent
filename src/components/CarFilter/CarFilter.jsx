@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CarsBrendBlock, CarsFilterBlock, CarsFilterLabelBlock, CarsMileageBlock, CarsMileageBlockFromTo, CarsPriceBlock, CarsSarchBtn, CustomDropdown, CustomRentalPrices, DropdownButton, DropdownButtonPrice, DropdownItem,  DropdownList, DropdownListPrice, InputStyledMileageFrom, InputStyledMileageTo } from "./CarFilter.styled";
+import { CarsBrendBlock, CarsFilterBlock, CarsFilterLabelBlock, CarsMileageBlock, CarsMileageBlockFromTo, CarsPriceBlock, CarsSarchBtn, CustomDropdown, CustomRentalPrices, DropdownButton, DropdownItem,  DropdownList, DropdownListPrice, InputStyledMileageFrom, InputStyledMileageTo } from "./CarFilter.styled";
 import {  useSelector } from "react-redux";
 import { selectCarsCatalog } from "redax/cars/selector";
 import { toast } from 'react-toastify';
@@ -72,9 +72,9 @@ export default function CarFilter({updateFilteredCars}) {
             <CustomRentalPrices>
               <CarsPriceBlock>
                 <CarsFilterLabelBlock htmlFor="price">Price/1 hou</CarsFilterLabelBlock>
-                <DropdownButtonPrice onClick={() => setIsOpenPrice(!isOpenPrice)}>
+                <DropdownButton onClick={() => setIsOpenPrice(!isOpenPrice)}>
                   {selectedPrice || 'To\u00A0$'}
-                </DropdownButtonPrice>
+                </DropdownButton>
                 <DropdownListPrice className={isOpenPrice ? 'isOpenPrice' : ''}>
                   {rentalPrices.map((brand) => (
                     <DropdownItem key={brand} onClick={() => handleBrandChangePrice(brand)}>

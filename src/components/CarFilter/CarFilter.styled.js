@@ -197,29 +197,6 @@ export const CustomRentalPrices = styled.div`
   color: ${color.gryeTextColorBrands};
 `;
 
-
-export const DropdownButtonPrice = styled.button`
-  width: 100%;
-  height: 48px;
-  padding: 14px 89px 14px 18px;
-  border-radius: 14px;
-  background: ${color.lightGray};
-  border: none;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-
-  &::after {
-    content: '\25BC';
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    color: red;
-  }
-`;
-
-
 export const DropdownListPrice = styled.ul`
   position: absolute; 
   top: 100%;
