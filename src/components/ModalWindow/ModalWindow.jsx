@@ -4,7 +4,7 @@ import icons from '../../img/icons.svg';
 
 export default function ModalWindow({ car, onClose }) {
 
-  const handleClose = useCallback(() => {
+  const handleClose = useCallback(() => {    
     onClose();
   }, [onClose]);
 
@@ -14,12 +14,23 @@ export default function ModalWindow({ car, onClose }) {
     }
   }, [handleClose]);
 
+  const handleBodyScroll = (disableScroll) => {
+    if (disableScroll) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
+    handleBodyScroll(true);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      handleBodyScroll(false);
     };
   }, [handleKeyDown]);
+  
     return (
       <ModalWindowBackdrop onClick={handleClose}>
         <ModalWindowContainer onClick={(e) => e.stopPropagation()}>
@@ -29,7 +40,6 @@ export default function ModalWindow({ car, onClose }) {
               <use href={`${icons}#icon-cross`} />
             </svg>
           </ModalBtnClose>
-
           
             <ModalWindowImg alt={car.model} src={car.img}></ModalWindowImg>
         

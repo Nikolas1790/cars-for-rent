@@ -3,16 +3,19 @@ import styled from 'styled-components'
 
 
 export const ModalWindowBackdrop = styled.div`
-  z-index: 1;
-  background: rgba(18, 20, 23, 0.50); 
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  
+  background: rgba(18, 20, 23, 0.50);   
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
+  
 `;
 
 export const ModalWindowContainer = styled.div`

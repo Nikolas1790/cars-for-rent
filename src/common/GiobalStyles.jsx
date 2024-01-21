@@ -60,6 +60,8 @@ html {
   scroll-behavior: smooth;
 }
 
-
+.no-scroll {
+  overflow: hidden;
+}
 
 `;

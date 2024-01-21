@@ -44,7 +44,6 @@ const carSlice = createSlice({
         })
         .addCase(fetchCarById.fulfilled, (state, action) => {
           state.loading = false;
-          console.log(action.payload)
           state.selectedCar = action.payload;
         })
         .addCase(fetchCarById.rejected, (state, action) => {
