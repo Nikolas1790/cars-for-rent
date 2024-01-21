@@ -7,6 +7,8 @@ import { fetchCarById } from "redax/cars/operation";
 import { MainConteinerCarsBlock, TitleThereNothing, WrapperOfMainConteinerCarsBlock } from "./FavoriteList.style";
 import { selectCarsCatalog, selectCarsFavorites } from "redax/cars/selector";
 import screensaver from '../../img/photo-there-is-nithing.jpg';
+import Loader from "components/Loader/Loader";
+
 
 export default function FavoriteList() {
   const dispatch = useDispatch();
@@ -14,6 +16,7 @@ export default function FavoriteList() {
   
   const favorites = useSelector(selectCarsFavorites);  
   const carList = useSelector(selectCarsCatalog);
+  const loading = useSelector((state) => state.cars.loading);
 
   const listFavorits = carList.filter(item => favorites.includes(item.id))
 
@@ -30,6 +33,10 @@ export default function FavoriteList() {
   const handleHeartClick = (id) => {
     dispatch(toggleFavorite(id));
   };  
+
+  if (loading) {
+    return <Loader />;
+  }
     return (
       <WrapperOfMainConteinerCarsBlock>
       <MainConteinerCarsBlock >

@@ -73,7 +73,7 @@ export default function ModalWindow({ car, onClose }) {
            </ModalAccessoriesBloc>
 
             <ModalRentalConditionsTitle>Rental Conditions:</ModalRentalConditionsTitle>
-            <ModalRentalConteiner>
+            <ModalRentalConteiner> 
               <ModalRentalKidsConteiner>
               {car.rentalConditions.split('\n').map((condition, index) => {
                 if (condition.startsWith("Minimum age:")) {
@@ -90,13 +90,13 @@ export default function ModalWindow({ car, onClose }) {
                 return <ModalRentalConditionsKids key={index}>{condition}</ModalRentalConditionsKids>;
                 }
               })}
-            </ModalRentalKidsConteiner>      
+              </ModalRentalKidsConteiner>      
 
-            <ModalRentalKidsConteiner>  
-              <ModalRentalConditionsKids>Security deposite required</ModalRentalConditionsKids>
-              <ModalRentalConditionsKids>mileage: <ModalRentalConditionsSpanBlue>{car.mileage}</ModalRentalConditionsSpanBlue></ModalRentalConditionsKids>
-              <ModalRentalConditionsKids>Price: <ModalRentalConditionsSpanBlue>{car.rentalPrice}</ModalRentalConditionsSpanBlue></ModalRentalConditionsKids>
-            </ModalRentalKidsConteiner>
+              <ModalRentalKidsConteiner>  
+                <ModalRentalConditionsKids>Security deposite required</ModalRentalConditionsKids>
+                <ModalRentalConditionsKids>mileage: <ModalRentalConditionsSpanBlue>{car.mileage}</ModalRentalConditionsSpanBlue></ModalRentalConditionsKids>
+                <ModalRentalConditionsKids>Price: <ModalRentalConditionsSpanBlue>{car.rentalPrice}</ModalRentalConditionsSpanBlue></ModalRentalConditionsKids>
+              </ModalRentalKidsConteiner>
             </ModalRentalConteiner>
 
              <ModalRentalCarLink href="tel:+380730000000">Rental car</ModalRentalCarLink>

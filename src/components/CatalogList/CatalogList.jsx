@@ -15,7 +15,7 @@ export default function CatalogList({ filteredCars }) {
   const carList = useSelector(selectCarsCatalog);
   
   useEffect(() => {
-    dispatch(fetchCars({ limit: currentPage*12}));
+    dispatch(fetchCars({ limit: currentPage * 12}));
   }, [dispatch, currentPage]);
 
 

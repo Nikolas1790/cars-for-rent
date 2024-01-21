@@ -98,7 +98,7 @@ line-height: 1.43;
 margin-bottom:8px;
 `;
 
-export const ModalRentalConteiner = styled.div`
+export const ModalRentalConteiner = styled.div` // I made one font, it looked so similar
 display: flex;
 flex-direction:column;
 gap: 8px;
