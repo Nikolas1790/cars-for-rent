@@ -14,7 +14,7 @@ Welcome to our Car Rental Platform, where you can easily find and rent cars in U
 
 Our platform offers a user-friendly experience for renting cars in Ukraine. Whether you need a vehicle for a short trip or an extended stay, we've got you covered.
 
-![Deployment status](./src/img/home-page.jpg)
+![Deployment status](./src/img/main-page.jpg)
 
 ## Car Listings
 Explore our diverse range of cars available for rent. Use the convenient filters to narrow down your search based on price, brand, and mileage. Find the perfect car that suits your needs and budget.
