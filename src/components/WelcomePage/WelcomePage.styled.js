@@ -9,7 +9,7 @@ export const WraperBox = styled.div`
   flex-direction:column;
   background: url(${backgroundImage}) no-repeat center center fixed;
   background-size: cover;
-  min-height: 940px;
+  min-height: 640px;
 `
 
 export const WelcomePageContainer = styled.div`
