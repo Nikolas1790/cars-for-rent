@@ -1,4 +1,4 @@
-import { AdvantageBlock, AdvantageItem, AdvantageTitle, ContacrUs, StyledBtnCarPark, WelcomePageContainer, WelcomePageTitle, WraperBox } from "./WelcomePage.styled";
+import { AdvantageBlock, AdvantageBlockMassage, AdvantageItem, AdvantageTitle, ContacrUs, StyledBtnCarPark, WelcomePageContainer, WelcomePageTitle, WraperBox } from "./WelcomePage.styled";
   
   export default function WelcomePage() {
     return (     
@@ -13,16 +13,18 @@ import { AdvantageBlock, AdvantageItem, AdvantageTitle, ContacrUs, StyledBtnCarP
             </StyledBtnCarPark>
           </div>
           <AdvantageBlock>
-            <AdvantageTitle>Our advantages :</AdvantageTitle>
-            <AdvantageItem>1. High Quality</AdvantageItem>
-            <AdvantageItem>2. Affordable Prices</AdvantageItem>
-            <AdvantageItem>3. Wide Selection</AdvantageItem>
-            <AdvantageItem>4. Exceptional Service</AdvantageItem>
-            <AdvantageItem>5. Fast Delivery</AdvantageItem>
+            <AdvantageBlockMassage>
+              <AdvantageTitle>Our advantages :</AdvantageTitle>
+              <AdvantageItem>1. High Quality</AdvantageItem>
+              <AdvantageItem>2. Affordable Prices</AdvantageItem>
+              <AdvantageItem>3. Wide Selection</AdvantageItem>
+              <AdvantageItem>4. Exceptional Service</AdvantageItem>
+              <AdvantageItem>5. Fast Delivery</AdvantageItem>
             
-            <ContacrUs href="tel:+380730000000">
-              Contact us +380730000000
-            </ContacrUs> 
+              <ContacrUs href="tel:+380730000000">
+                Contact us +380730000000
+              </ContacrUs> 
+            </AdvantageBlockMassage>
           </AdvantageBlock>
         </WelcomePageContainer>
       </WraperBox>     

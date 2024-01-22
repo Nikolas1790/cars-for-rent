@@ -59,25 +59,32 @@ export const AdvantageBlock = styled.div`
   margin-left: auto;
 `;
 
+
+export const AdvantageBlockMassage = styled.div`
+  background: ${color.greyRgba};
+  padding:  8px ;
+  border-radius: 0px 36px 36px 36px;
+  box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
+`;
+
 export const AdvantageTitle = styled.h3`
   margin-bottom: 8px;
   font-size: 30px;
   font-weight: 700;
   color: ${color.lightBlue};
-  text-shadow: 1px 1px 0px ${color.whitePrimary};
 `;
 
 export const AdvantageItem = styled.p`
   font-size: 20px;
   font-weight: 700;
-  color: ${color.lightBlue};
-  text-shadow: 1px 1px 0px ${color.whitePrimary};
+  color: ${color.whitePrimary};
 `;
 
 export const ContacrUs = styled.a`
   font-size: 16px;
   font-weight: 500;
   padding: 8px;
+  color: ${color.secondaryGray};
 
   transition: color 0.3s linear;
   &:hover,
