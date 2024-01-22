@@ -53,7 +53,7 @@ export default function CarFilter({updateFilteredCars}) {
         <CarsFilterBlock>
             <CustomDropdown>
               <CarsBrendBlock>
-                <CarsFilterLabelBlock htmlFor="carBrand">Car brand</CarsFilterLabelBlock>
+                <CarsFilterLabelBlock >Car brand</CarsFilterLabelBlock>
                 <DropdownButton onClick={() => setIsOpen(!isOpen)}>
 
                   {selectedBrand || 'Enter the text'}
@@ -70,7 +70,7 @@ export default function CarFilter({updateFilteredCars}) {
 
             <CustomRentalPrices>
               <CarsPriceBlock>
-                <CarsFilterLabelBlock htmlFor="price">Price/1 hou</CarsFilterLabelBlock>
+                <CarsFilterLabelBlock >Price/1 hou</CarsFilterLabelBlock>
                 <DropdownButton onClick={() => setIsOpenPrice(!isOpenPrice)}>
                   {selectedPrice || 'To\u00A0$'}
                 </DropdownButton>
