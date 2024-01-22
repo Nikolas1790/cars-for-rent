@@ -77,7 +77,7 @@ export const AdvantageTitle = styled.h3`
 export const AdvantageItem = styled.p`
   font-size: 20px;
   font-weight: 700;
-  color: ${color.whitePrimary};
+  color: ${color.whiteShade};
 `;
 
 export const ContacrUs = styled.a`
