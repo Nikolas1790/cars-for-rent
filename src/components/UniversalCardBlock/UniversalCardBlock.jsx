@@ -17,7 +17,7 @@ const UniversalCardBlock = ({ data, onHeartClick, onLearnMoreClick }) => {
           </CardHeartBtn>
           <div>
             <CardImg src={item.img}
-                alt={item.make}   
+                alt={item.img}   
             />
             <CardMainInfo>
                 <p >{item.make} <CarModel>{item.model}</CarModel>, {item.year}</p>
