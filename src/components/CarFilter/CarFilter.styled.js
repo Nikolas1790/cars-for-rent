@@ -178,12 +178,13 @@ export const DropdownList = styled.ul`
 export const DropdownItem = styled.li`
   cursor: pointer;
   
+  transition: color 0.25s linear;
   &:not(:last-child) {
     margin-bottom: 8px; 
   }
 
   &:hover {
-    background-color: #f2f2f2; // ховер
+    color: ${color.blackPrimary} ; 
   }
 `;
 

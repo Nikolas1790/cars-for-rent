@@ -33,7 +33,6 @@ export default function CarFilter({updateFilteredCars}) {
       setIsOpenPrice(false);
   };
 
-
     const handleFromMileageChange = (event) => {
         setFromMileage(event.target.value.replace('From ', ''));
     };
