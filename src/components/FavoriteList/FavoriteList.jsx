@@ -47,7 +47,7 @@ export default function FavoriteList() {
           {listFavorits.length === 0 ? (
             <div>
               <img src={screensaver} alt="car" width={700} />
-              <TitleThereNothing>There's nothing here yet</TitleThereNothing>
+              <TitleThereNothing>There's nothing here yet ...</TitleThereNothing>
             </div>
           ) : (
             <UniversalCardBlock
