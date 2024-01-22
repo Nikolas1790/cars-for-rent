@@ -19,7 +19,7 @@ width: 224px;
 height: 74px;
 `;
 
-export const CarsFilterLabelBlock = styled.label`
+export const CarsFilterLabelBlock = styled.p`
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
@@ -27,34 +27,34 @@ export const CarsFilterLabelBlock = styled.label`
   color: ${color.secondaryGray};
 `;
 
-export const SelectStyledBrendBlock = styled.select`
-  display: flex;
-  padding: 14px 89px 14px 18px;
+// export const SelectStyledBrendBlock = styled.select`
+//   display: flex;
+//   padding: 14px 89px 14px 18px;
 
-  width: 100%; 
-  height: 48px;
-  outline: none;  
+//   width: 100%; 
+//   height: 48px;
+//   outline: none;  
   
-  border-radius: 14px;
-  background: ${color.lightGray};
-  border: none;   
-`;
+//   border-radius: 14px;
+//   background: ${color.lightGray};
+//   border: none;   
+// `;
 
 export const CarsPriceBlock = styled.div`
   width: 125px;
   height: 74px;
 `;
 
-export const SelectStyledPriceBlock = styled.select`  
-  display: flex;  
-  width: 100%; 
-  height: 48px;
-  padding: 14px  18px;
-  border: none;  
-  outline: none; 
-  border-radius: 14px;
-  background: ${color.lightGray};
-`;
+// export const SelectStyledPriceBlock = styled.select`  
+//   display: flex;  
+//   width: 100%; 
+//   height: 48px;
+//   padding: 14px  18px;
+//   border: none;  
+//   outline: none; 
+//   border-radius: 14px;
+//   background: ${color.lightGray};
+// `;
 
 export const CarsMileageBlock = styled.div`
 width: 320px;
