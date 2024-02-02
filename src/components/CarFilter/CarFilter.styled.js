@@ -27,34 +27,10 @@ export const CarsFilterLabelBlock = styled.p`
   color: ${color.secondaryGray};
 `;
 
-// export const SelectStyledBrendBlock = styled.select`
-//   display: flex;
-//   padding: 14px 89px 14px 18px;
-
-//   width: 100%; 
-//   height: 48px;
-//   outline: none;  
-  
-//   border-radius: 14px;
-//   background: ${color.lightGray};
-//   border: none;   
-// `;
-
 export const CarsPriceBlock = styled.div`
   width: 125px;
   height: 74px;
 `;
-
-// export const SelectStyledPriceBlock = styled.select`  
-//   display: flex;  
-//   width: 100%; 
-//   height: 48px;
-//   padding: 14px  18px;
-//   border: none;  
-//   outline: none; 
-//   border-radius: 14px;
-//   background: ${color.lightGray};
-// `;
 
 export const CarsMileageBlock = styled.div`
 width: 320px;
